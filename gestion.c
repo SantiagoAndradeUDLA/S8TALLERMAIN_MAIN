@@ -2,6 +2,10 @@
 #include <string.h>
 #include "gestion.h"
 
+/*
+bueno funciones.c
+*/
+
 void agregar_producto(char (*nombres)[MAX_NOMBRE], int *cantidades, int *pesos, float *precios, int *tiempos_fabricacion, int *total_productos) {
     if (*total_productos >= MAX_PRODUCTOS) {
         printf("No se pueden agregar más productos.\n");

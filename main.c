@@ -2,6 +2,9 @@
 #include <string.h>
 #include "gestion.h"
 
+/*
+bueno main
+*/
 int main() {
     char nombres[MAX_PRODUCTOS][MAX_NOMBRE];
     int cantidades[MAX_PRODUCTOS];
