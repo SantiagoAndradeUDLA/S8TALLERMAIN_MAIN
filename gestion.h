@@ -1,8 +1,8 @@
 #ifndef GESTION_H
 #define GESTION_H
 
-#define MAX_PRODUCTOS 100
-#define MAX_NOMBRE 50
+#define MAX_PRODUCTOS 10  //define maximos productos
+#define MAX_NOMBRE 50  //define maximos nombres
 
 void agregar_producto(char (*nombres)[MAX_NOMBRE], int *cantidades, int *pesos, float *precios, float *tiempos_fabricacion, int *total_productos);
 void editar_producto(char (*nombres)[MAX_NOMBRE], int *cantidades, int *pesos, float *precios, float *tiempos_fabricacion, int total_productos);

@@ -1,18 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 #include "gestion.h"
-
 /*
-bueno main
 #define MAX_PRODUCTOS 4
 #define MAX_NOMBRE 50
- */
+en gestion.h
+*/
 int main() {
     char nombres[MAX_PRODUCTOS][MAX_NOMBRE];
     int cantidades[MAX_PRODUCTOS];
     int pesos[MAX_PRODUCTOS];
-    float precios[MAX_PRODUCTOS];  // Asegúrate de que esto ya era float
-    float tiempos_fabricacion[MAX_PRODUCTOS];  // Cambia esto a float
+    float precios[MAX_PRODUCTOS];
+    float tiempos_fabricacion[MAX_PRODUCTOS];
     int total_productos = 0;
     int opcion;
 
@@ -47,6 +46,5 @@ int main() {
                 printf("Opcion invalida. Intente nuevamente.\n");
         }
     } while (opcion != 5);
-
     return 0;
 }

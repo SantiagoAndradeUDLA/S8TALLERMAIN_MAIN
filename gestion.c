@@ -130,7 +130,7 @@ void eliminar_producto(char (*nombres)[MAX_NOMBRE], int *cantidades, int *pesos,
         if (strcmp(nombres[i], nombre_buscado) == 0) {  // si 0 entonces stringcompare devuelve 0, por lo tanto
             for (int j = i; j < *total_productos - 1; j++) {
                 strcpy(nombres[j], nombres[j + 1]);
-                cantidades[j] = cantidades[j + 1];    //CONCLUSION: -1(j) +j, deja vacio y ya lo rellena :o
+                cantidades[j] = cantidades[j + 1];    //CONCLUSION: +j+1, deja vacio y ya lo rellena :o
                 pesos[j] = pesos[j + 1];
                 precios[j] = precios[j + 1];
                 tiempos_fabricacion[j] = tiempos_fabricacion[j + 1];
@@ -140,11 +140,12 @@ void eliminar_producto(char (*nombres)[MAX_NOMBRE], int *cantidades, int *pesos,
             return;
         }
     }
-
     printf("Producto no encontrado.\n");
 }
 
 void mostrar_resumen(char (*nombres)[MAX_NOMBRE], int *cantidades, int *pesos, float *precios, float *tiempos_fabricacion, int total_productos) {
+
+    int i = 0;
     if (total_productos == 0) {
         printf("No hay productos registrados.\n");
         return;
@@ -158,6 +159,8 @@ void mostrar_resumen(char (*nombres)[MAX_NOMBRE], int *cantidades, int *pesos, f
         printf("%-12i| %-16s | %-8i | %-9i | $%7.2f | %23.2f\n", 
                i + 1, nombres[i], cantidades[i], pesos[i], precios[i], tiempos_fabricacion[i]);
     }
+
+
 /*
  printf("\n--- Resumen de productos ---\n");
     for (int i = 0; i < total_productos; i++) {
