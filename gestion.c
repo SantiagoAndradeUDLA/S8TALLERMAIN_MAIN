@@ -143,6 +143,14 @@ void eliminar_producto(char (*nombres)[MAX_NOMBRE], int *cantidades, int *pesos,
     printf("Producto no encontrado.\n");
 }
 
+float calcular_demanda(int cantidad, float precio, float tiempo_fabricacion) {
+    if (precio <= 0 || tiempo_fabricacion <= 0) {
+        printf("Error: Precio o tiempo de fabricacin no pueden ser menores o iguales a 0.\n");
+        return 0.0;
+    }
+    return (cantidad / precio) * (1.0 / tiempo_fabricacion);
+}
+
 void mostrar_resumen(char (*nombres)[MAX_NOMBRE], int *cantidades, int *pesos, float *precios, float *tiempos_fabricacion, int total_productos) {
 
     if (total_productos == 0) {
@@ -151,13 +159,15 @@ void mostrar_resumen(char (*nombres)[MAX_NOMBRE], int *cantidades, int *pesos, f
     }
 
     printf("\n--- Resumen de productos ---\n");
-    printf("Producto    | Nombre           | Cantidad | Peso (gr) | Precio   | Tiempo Fabricacion (horas)\n");
-    printf("------------|------------------|----------|-----------|----------|---------------------------\n");
+    printf("Producto    | Nombre           | Cantidad | Peso (gr) | Precio   | Tiempo Fabricacion (horas) | Demanda\n");
+    printf("------------|------------------|----------|-----------|----------|----------------------------|--------\n");
 
     for (int i = 0; i < total_productos; i++) {
-        printf("%-12i| %-16s | %-8i | %-9i | $%7.2f | %23.2f\n", 
-               i + 1, nombres[i], cantidades[i], pesos[i], precios[i], tiempos_fabricacion[i]);
+        float demanda = calcular_demanda(*(cantidades + i), *(precios + i), *(tiempos_fabricacion + i));
+        printf("%-12i| %-16s | %-8i | %-9i | $%7.2f | %25.2f | %7.2f\n", 
+               i + 1, *(nombres + i), *(cantidades + i), *(pesos + i), *(precios + i), *(tiempos_fabricacion + i), demanda);
     }
+}
 
 
 /*
@@ -170,4 +180,4 @@ void mostrar_resumen(char (*nombres)[MAX_NOMBRE], int *cantidades, int *pesos, f
         printf("  Precio: $%.2f\n", precios[i]);
         printf("  Tiempo de fabricación: %d horas\n", tiempos_fabricacion[i]);
 */
-}
+
