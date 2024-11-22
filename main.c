@@ -11,8 +11,8 @@ int main() {
     char nombres[MAX_PRODUCTOS][MAX_NOMBRE];
     int cantidades[MAX_PRODUCTOS];
     int pesos[MAX_PRODUCTOS];
-    float precios[MAX_PRODUCTOS];
-    int tiempos_fabricacion[MAX_PRODUCTOS];
+    float precios[MAX_PRODUCTOS];  // Asegúrate de que esto ya era float
+    float tiempos_fabricacion[MAX_PRODUCTOS];  // Cambia esto a float
     int total_productos = 0;
     int opcion;
 
