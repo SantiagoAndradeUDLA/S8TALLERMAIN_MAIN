@@ -4,7 +4,9 @@
 
 /*
 bueno main
-*/
+#define MAX_PRODUCTOS 4
+#define MAX_NOMBRE 50
+ */
 int main() {
     char nombres[MAX_PRODUCTOS][MAX_NOMBRE];
     int cantidades[MAX_PRODUCTOS];
