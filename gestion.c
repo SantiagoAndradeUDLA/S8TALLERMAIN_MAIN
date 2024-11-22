@@ -145,7 +145,6 @@ void eliminar_producto(char (*nombres)[MAX_NOMBRE], int *cantidades, int *pesos,
 
 void mostrar_resumen(char (*nombres)[MAX_NOMBRE], int *cantidades, int *pesos, float *precios, float *tiempos_fabricacion, int total_productos) {
 
-    int i = 0;
     if (total_productos == 0) {
         printf("No hay productos registrados.\n");
         return;
